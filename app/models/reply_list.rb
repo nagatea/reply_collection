@@ -1,0 +1,2 @@
+class ReplyList < ApplicationRecord
+end
