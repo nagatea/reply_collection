@@ -1,2 +1,14 @@
 <h1>ReplyLists#index</h1>
-<p>Find me in app/views/reply_lists/index.html.erb</p>
+<table width="100%">
+    <tr>
+        <th>ID</th><th>リプライ</th><th>作った日</th><th>カウント</th><th colspan="2"></th>
+    </tr>
+    <% @list.each do |obj| %>
+    <tr>
+        <td width="35px"><%= obj.id %></td>
+        <td width="50%"><a href="/detail/<%= obj.id %>"><%= obj.reply %></a></td>
+        <td width="80px"><%= obj.created_time %></td>
+        <td width="40px"><%= obj.count %></td>
+    </tr>
+    <% end %>
+</table>

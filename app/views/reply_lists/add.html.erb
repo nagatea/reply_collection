@@ -1,2 +1,10 @@
 <h1>ReplyLists#add</h1>
-<p>Find me in app/views/reply_lists/add.html.erb</p>
+<table>
+    <%= form_for( @list, url:{controller:'reply_lists', action:'add'}) do |f| %>
+    <tr><th>リプライ</th>
+        <td><%= f.text_field :reply , {size:40} %></td>
+        <td><%= f.submit "保存" %></td>
+    </tr>
+    <% end %>
+</table>
+<p class="link"><a href="/reply_lists">トップページに戻る</a></p>
