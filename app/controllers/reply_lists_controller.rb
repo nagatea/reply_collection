@@ -5,12 +5,11 @@ class ReplyListsController < ApplicationController
 
   def add
     if request.post? then
-      ReplyList.create(
-        params.require(:reply_list).permit(:reply, :count, :created_time)
-      )
+      @list = ReplyList.create(list_params)
+      @list.update(:count => 0)
       goback
     else
-      @list = ReplyList.new
+      @list = ReplyList.new()
     end
   end
 
@@ -28,7 +27,7 @@ class ReplyListsController < ApplicationController
 
   private
   def list_params
-    params.require(:reply_list).permit(:reply, :count, :created_time)
+    params.require(:reply_list).permit(:reply, :count)
   end
 
   private

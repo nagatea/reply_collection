@@ -5,10 +5,10 @@
     </tr>
     <% @list.each do |obj| %>
     <tr>
-        <td width="35px"><%= obj.id %></td>
+        <td width="10%"><%= obj.id %></td>
         <td width="50%"><a href="/detail/<%= obj.id %>"><%= obj.reply %></a></td>
-        <td width="80px"><%= obj.created_time %></td>
-        <td width="40px"><%= obj.count %></td>
+        <td width="30%"><%= obj.created_at %></td>
+        <td width="10%"><%= obj.count %></td>
     </tr>
     <% end %>
 </table>
